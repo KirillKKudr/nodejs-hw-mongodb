@@ -12,6 +12,7 @@ const setupServer = () => {
 
   app.use("/contacts", contactsRoutes);
 
+  
   app.use((req, res) => {
     res.status(404).json({ message: "Not found" });
   });
@@ -23,3 +24,4 @@ const setupServer = () => {
 };
 
 module.exports = setupServer;
+
