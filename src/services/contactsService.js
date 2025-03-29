@@ -1,4 +1,5 @@
 import { ContactsCollection } from "../models/contactsModel.js";
+import createError from "http-errors";
 
 export const getAllContacts = async ({ page, perPage, sortBy, sortOrder, filter }) => {
   const totalItems = await ContactsCollection.countDocuments(filter);
@@ -25,7 +26,7 @@ export const getAllContacts = async ({ page, perPage, sortBy, sortOrder, filter 
 export const getContactById = async (contactId) => {
   const contact = await ContactsCollection.findById(contactId);
   if (!contact) {
-    throw new Error("Contact not found");
+    throw createError(404, "Contact not found");
   }
   return contact;
 };
@@ -39,7 +40,7 @@ export const createContact = async (contactData) => {
 export const updateContactById = async (contactId, updateData) => {
   const updatedContact = await ContactsCollection.findByIdAndUpdate(contactId, updateData, { new: true });
   if (!updatedContact) {
-    throw new Error("Contact not found");
+    throw createError(404, "Contact not found");
   }
   return updatedContact;
 };
@@ -47,7 +48,7 @@ export const updateContactById = async (contactId, updateData) => {
 export const deleteContactById = async (contactId) => {
   const deletedContact = await ContactsCollection.findByIdAndDelete(contactId);
   if (!deletedContact) {
-    throw new Error("Contact not found");
+    throw createError(404, "Contact not found");
   }
   return deletedContact;
 };
