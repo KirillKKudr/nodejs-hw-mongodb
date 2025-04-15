@@ -7,34 +7,34 @@ required:
   - userId
 properties:
   _id:
-    description: 'Contact`s id'
+    description: "Contact's id"
     type: string
     example: 65e4decdd286b30065d54af9
   name:
-    description: 'Contact`s name'
+    description: "Contact's name"
     type: string
-    example: 'John Doe'
+    example: "John Doe"
   phoneNumber:
-    description: 'Contact`s phone number'
+    description: "Contact's phone number"
     type: string
-    example: '+380500000013'
+    example: "+380500000013"
   email:
-    description: 'Contact`s email'
+    description: "Contact's email"
     type: string
-    example: 'john.doe@example.com'
+    example: "john.doe@example.com"
   isFavourite:
-    description: 'Whether is contact in favourites'
+    description: "Whether contact is in favourites"
     type: boolean
     example: true
   contactType:
-    description: 'Type of contact'
+    description: "Type of contact"
     type: string
-    example: ['work', 'home', 'personal']
+    example: personal
   photo:
-    description: 'Contact`s photo url'
+    description: "Contact's photo url"
     type: string
-    example: 'https://res.cloudinary.com/drmscwucc/image/upload/v1740338500/xcu8tfhe01bpaobpzuon'
+    example: "https://res.cloudinary.com/drmscwucc/image/upload/v1740338500/xcu8tfhe01bpaobpzuon"
   userId:
-    description: 'Contact`s owner'
+    description: "Contact's owner"
     type: string
     example: 65e4decdd286b30065d54af9
