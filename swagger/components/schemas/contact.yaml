@@ -29,7 +29,11 @@ properties:
   contactType:
     description: 'Type of contact'
     type: string
-    example: 'work'  
+    enum:
+      - work
+      - home
+      - personal
+    example: 'work'
   photo:
     description: 'Contact`s photo url'
     type: string

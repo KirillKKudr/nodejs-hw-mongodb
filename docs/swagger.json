@@ -10,13 +10,11 @@
     "description": "This is a documentation of contacts app"
   },
   "servers": [
-    {
-      "url": "http://localhost:3000"
-    },
-    {
-      "url": "https://contacts-app-p05t.onrender.com"
-    }
-  ],
+  {
+    "url": "https://nodejs-hw-mongodb-l3np.onrender.com"
+  }
+],
+
   "tags": [
     {
       "name": "Contacts",
