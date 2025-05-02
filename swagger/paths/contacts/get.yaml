@@ -19,7 +19,7 @@ parameters:
       type: integer
       example: 10
       default: 10
-    description: 'number of contacts per page'
+    description: 'Number of contacts per page'
   - in: query
     name: sortOrder
     schema:
@@ -34,7 +34,7 @@ parameters:
       type: boolean
       example: true
       default: false
-    description: 'Whether is contact in favourites'
+    description: 'Whether the contact is in favourites'
   - in: query
     name: contactType
     schema:
@@ -42,6 +42,13 @@ parameters:
       enum: ['work', 'home', 'personal']
       example: personal
     description: 'Type of contact'
+  - in: query
+    name: sortBy
+    schema:
+      type: string
+      enum: ['name', 'createdAt', 'updatedAt']
+      example: 'name'
+    description: 'Field by which to sort contacts'
 responses:
   '200':
     description: Successfully found contacts!

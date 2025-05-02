@@ -31,7 +31,7 @@ requestBody:
             type: string
             example: 'Maria.95@example.com'
           isFavourite:
-            description: 'Whether is contact in favourites'
+            description: 'Whether the contact is in favourites'
             type: boolean
             example: false
           contactType:
@@ -63,7 +63,23 @@ responses:
               example: 'Successfully patched a contact!'
             data:
               type: object
-              $ref: ../../../components/schemas/contact.yaml
+              $ref: '../../../components/schemas/contact.yaml'
+  '400':
+    description: 'Bad request. The request cannot be processed due to client-side error.'
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - status
+            - message
+          properties:
+            status:
+              type: integer
+              example: 400
+            message:
+              type: string
+              example: 'Invalid data provided'
   '401':
     $ref: '../../../components/responses/401.yaml'
   '404':
