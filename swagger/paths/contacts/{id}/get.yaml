@@ -33,6 +33,22 @@ responses:
             data:
               type: object
               $ref: '../../../components/schemas/contact.yaml'
+  '400':
+    description: 'Bad request. The request cannot be processed due to client-side error.'
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - status
+            - message
+          properties:
+            status:
+              type: integer
+              example: 400
+            message:
+              type: string
+              example: 'Invalid contact ID provided'
   '401':
     $ref: '../../../components/responses/401.yaml'
   '404':
