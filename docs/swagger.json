@@ -60,7 +60,7 @@
               "example": 10,
               "default": 10
             },
-            "description": "number of contacts per page"
+            "description": "Number of contacts per page"
           },
           {
             "in": "query",
@@ -84,7 +84,7 @@
               "example": true,
               "default": false
             },
-            "description": "Whether is contact in favourites"
+            "description": "Whether the contact is in favourites"
           },
           {
             "in": "query",
@@ -99,6 +99,20 @@
               "example": "personal"
             },
             "description": "Type of contact"
+          },
+          {
+            "in": "query",
+            "name": "sortBy",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "name",
+                "createdAt",
+                "updatedAt"
+              ],
+              "example": "name"
+            },
+            "description": "Field by which to sort contacts"
           }
         ],
         "responses": {
@@ -332,6 +346,30 @@
               }
             }
           },
+          "400": {
+            "description": "Bad request. The request cannot be processed due to client-side error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "status",
+                    "message"
+                  ],
+                  "properties": {
+                    "status": {
+                      "type": "integer",
+                      "example": 400
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Invalid contact ID provided"
+                    }
+                  }
+                }
+              }
+            }
+          },
           "401": {
             "$ref": "#/components/responses/401"
           },
@@ -385,7 +423,7 @@
                     "example": "Maria.95@example.com"
                   },
                   "isFavourite": {
-                    "description": "Whether is contact in favourites",
+                    "description": "Whether the contact is in favourites",
                     "type": "boolean",
                     "example": false
                   },
@@ -439,6 +477,30 @@
               }
             }
           },
+          "400": {
+            "description": "Bad request. The request cannot be processed due to client-side error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "status",
+                    "message"
+                  ],
+                  "properties": {
+                    "status": {
+                      "type": "integer",
+                      "example": 400
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Invalid data provided"
+                    }
+                  }
+                }
+              }
+            }
+          },
           "401": {
             "$ref": "#/components/responses/401"
           },
@@ -473,6 +535,30 @@
         "responses": {
           "204": {
             "description": "No content"
+          },
+          "400": {
+            "description": "Bad request. The request cannot be processed due to client-side error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "status",
+                    "message"
+                  ],
+                  "properties": {
+                    "status": {
+                      "type": "integer",
+                      "example": 400
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Invalid contact ID provided"
+                    }
+                  }
+                }
+              }
+            }
           },
           "401": {
             "$ref": "#/components/responses/401"
