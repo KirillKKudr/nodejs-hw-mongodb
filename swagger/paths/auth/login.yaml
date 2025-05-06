@@ -48,5 +48,7 @@ responses:
                   description: "User's access token"
                   type: string
                   example: 'UitOfpztfXsEqKzi3hIhpkziGELI5FHYlfUpEoGE'
+  '400':
+    $ref: '../../components/responses/400.yaml'
   '401':
     $ref: '../../components/responses/401.yaml'
