@@ -1,8 +1,8 @@
 import { CONTACT_TYPES } from '../constants/index.js';
 
-const parseType = (type) => {
-  if (typeof type !== 'string') return;
-  if (CONTACT_TYPES.includes(type)) return type;
+const parseContactType = (contactType) => {
+  if (typeof contactType !== 'string') return;
+  if (CONTACT_TYPES.includes(contactType)) return contactType;
 };
 
 const parseIsFavourite = (isFavourite) => {
@@ -11,8 +11,8 @@ const parseIsFavourite = (isFavourite) => {
   if (isFavourite === 'false') return false;
 };
 
-export const parseFilterParams = ({ type, isFavourite }) => {
-  const parsedType = parseType(type);
+export const parseFilterParams = ({ contactType, isFavourite }) => {
+  const parsedType = parseContactType(contactType);
   const parsedIsFavourite = parseIsFavourite(isFavourite);
 
   return {
